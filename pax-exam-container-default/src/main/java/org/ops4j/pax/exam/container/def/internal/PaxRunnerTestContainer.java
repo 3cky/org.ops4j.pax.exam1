@@ -362,7 +362,9 @@ class PaxRunnerTestContainer
             // rmi communication port
             systemProperty( Constants.RMI_PORT_PROPERTY ).value( m_remoteBundleContextClient.getRmiPort().toString() ),
             // boot delegation for sun.*. This seems only necessary in Knopflerfish version > 2.0.0
-            bootDelegationPackage( "sun.*" ) };
+            bootDelegationPackage( "sun.*" ),
+            // set headless mode
+            systemProperty("java.awt.headless").value("true") };
     }
 
     /**
